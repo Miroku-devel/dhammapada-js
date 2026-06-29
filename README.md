@@ -14,7 +14,7 @@
 This web application provides access to the Dhammapada, one of the fundamental works of the Buddhist tradition. It contains 423 verses of teachings attributed to the Buddha, presented in an accessible format in over 50 languages, allowing readers around the world to study the text in their own language.
 
 ## Copyright and License
-The application logic, UI design, assets, and build scripts are licensed under the **GNU GPL 3.0**.
+The application logic, UI design, assets, and build scripts are licensed under the **GNU AGPL 3.0**.
 
 All translations are the property of their respective authors or original publishers.
 For the complete list of translators, sources, and individual license terms for each language
