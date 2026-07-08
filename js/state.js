@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
+
 (function() {
   'use strict';
   window.dh = window.dh || {};
-
-  // State variables
   window.dh.currentLang = 'en';
   window.dh.currentChapter = null;
   window.dh.paliEnabled = false;
@@ -18,8 +17,6 @@
   window.dh.langList = null;
   window.dh.totalChapters = 0;
   window.dh.chapters = [];
-
-  // DOM elements
   window.dh.langSelect = document.getElementById('langSelect');
   window.dh.sidebar = document.getElementById('sidebar');
   window.dh.mainContent = document.getElementById('mainContent');

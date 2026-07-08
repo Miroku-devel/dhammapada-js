@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
+
 (function() {
   'use strict';
   window.dh = window.dh || {};
-
   window.dh.saveSettings = function() {
     try {
       localStorage.setItem('dhammapada', JSON.stringify({
@@ -15,7 +15,6 @@
       }));
     } catch (_) {}
   };
-
   window.dh.loadSettings = function() {
     try {
       var saved = JSON.parse(localStorage.getItem('dhammapada'));
@@ -29,7 +28,6 @@
       }
     } catch (_) {}
   };
-
   window.dh.switchLang = function(code) {
     window.dh.currentLang = code;
     window.dh.loadScript('lang/' + code + '.js').then(function() {

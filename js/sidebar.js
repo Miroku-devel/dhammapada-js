@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-only
+
 (function() {
   'use strict';
   window.dh = window.dh || {};
-
   window.dh.isMobile = function() {
     return window.innerWidth <= 768;
   };
-
   window.dh.toggleSidebar = function() {
     window.dh.sidebar.classList.toggle('open');
     window.dh.sidebarBackdrop.classList.toggle('open');
@@ -26,25 +25,21 @@
       });
     }
   };
-
   window.dh.closeSidebar = function() {
     window.dh.sidebar.classList.remove('open');
     window.dh.sidebarBackdrop.classList.remove('open');
   };
-
   window.dh.updateSidebarChapter = function(skipScroll) {
     var sections = window.dh.versesContainer.querySelectorAll('.chapter-section');
     var containerTop = window.dh.mainContent.getBoundingClientRect().top;
     var midPoint = containerTop + window.dh.mainContent.clientHeight / 2;
     var bestIdx = window.dh.currentChapter !== null ? window.dh.currentChapter : 0;
-
     for (var i = 0; i < sections.length; i++) {
       var rect = sections[i].getBoundingClientRect();
       if (rect.top <= midPoint) {
         bestIdx = i;
       }
     }
-
     if (bestIdx !== window.dh.currentChapter) {
       window.dh.currentChapter = bestIdx;
     }
@@ -66,7 +61,6 @@
       }
     }
   };
-
   window.dh.scrollToChapter = function(idx) {
     if (idx < 0 || idx >= window.dh.totalChapters) return;
     var section = window.dh.versesContainer.querySelector('.chapter-section[data-chapter="' + idx + '"]');
@@ -78,12 +72,10 @@
     }
     window.dh.updateSidebarChapter();
   };
-
   window.dh.buildSidebar = function(skipChapterUpdate) {
     document.getElementById('chaptersTitle').textContent = window.dh.langData.chaps || 'Chapters';
     var existing = window.dh.sidebar.querySelectorAll('.chapter-btn');
     for (var bi = 0; bi < existing.length; bi++) existing[bi].remove();
-
     for (var i = 0; i < window.dh.totalChapters; i++) {
       var name = window.dh.langData[window.dh.chapterNames[i]] || window.dh.chapterNames[i];
       var btn = document.createElement('button');

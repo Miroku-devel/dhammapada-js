@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
+
 (function() {
   'use strict';
   window.dh = window.dh || {};
-
   window.dh.copyToClipboard = function(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).catch(function() { window.dh.fallbackCopy(text); });
@@ -10,7 +10,6 @@
       window.dh.fallbackCopy(text);
     }
   };
-
   window.dh.fallbackCopy = function(text) {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -21,7 +20,6 @@
     try { document.execCommand('copy'); } catch (_) {}
     document.body.removeChild(ta);
   };
-
   window.dh.openShareModal = function(text) {
     window.dh.shareVerse.textContent = text;
     var enc = encodeURIComponent(text);
@@ -33,7 +31,6 @@
     window.dh.shareEmail.href = 'mailto:?subject=Dhammapada&body=' + enc;
     window.dh.shareOverlay.classList.add('open');
   };
-
   window.dh.closeShareModal = function() {
     window.dh.shareOverlay.classList.remove('open');
   };
